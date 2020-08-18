@@ -35,14 +35,22 @@ Park.prototype.parkStar = function () {
   return top_dino;
 }
 
-Park.prototype.allFromSameSpecies = function(species_name){
-  allFromOneSpecies = []
-  for (dino of this.dino_collection){
-    if (dino.species_name === species_name){
-      allFromOneSpecies.push(dino)
+Park.prototype.allFromSameSpecies = function(a_name) {
+  dinoList = [];
+
+  // for (i =0; i<this.dino_collection.length; i++){
+  //   if(this.dino_collection[i].species)
+  // }
+
+
+
+
+  for (dino of this.dino_collection) {
+    if (dino.species === a_name) {
+      dinoList.push(dino);
     }
   }
-  return allFromOneSpecies;
+  return dinoList;
 }
 
 
