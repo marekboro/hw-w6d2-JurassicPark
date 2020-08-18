@@ -32,6 +32,9 @@ describe('Park', function () {
     dinosaur10 = new Dinosaur("Compsognathus", "carnivore", 14);
     dinosaur11 = new Dinosaur("Ankylosaurus", "herbivore", 13);
     dinosaur12 = new Dinosaur("Apatosaurus", "herbivore", 28);
+    dinosaur13 = new Dinosaur("Velociraptor", "carnivore", 25);
+    dinosaur14 = new Dinosaur("Velociraptor", "carnivore", 25);
+    dinosaur15 = new Dinosaur("Apatosaurus", "herbivore", 28);
     
 
     thePark = new Park("Jurassic parque", 120, parkCollection);
@@ -48,6 +51,10 @@ describe('Park', function () {
     thePark.addDinosaur(dinosaur10);
     thePark.addDinosaur(dinosaur11);
     thePark.addDinosaur(dinosaur12);
+    thePark.addDinosaur(dinosaur13);
+    thePark.addDinosaur(dinosaur14);
+    thePark.addDinosaur(dinosaur15);
+    
     
     
   })
@@ -64,21 +71,21 @@ describe('Park', function () {
 
   it('should have a collection of dinosaurs', function () {
     const actual = thePark.dino_collection.length;
-    assert.equal(actual, 12);
+    assert.equal(actual, 15);
   });
 
   it('should be able to add a dinosaur to its collection', function(){
     dino13 = new Dinosaur("Denver","hugs",5);
     thePark.addDinosaur(dino13);
     const actual = thePark.dino_collection.length;
-    assert.equal(actual, 13);
+    assert.equal(actual, 16);
   });
     
 
   it('should be able to remove a dinosaur from its collection', function(){
     thePark.removeDinosaur(dino13);
     const actual = thePark.dino_collection.length;
-    assert.equal(actual, 12);
+    assert.equal(actual, 15);
   });
 
   it('should be able to find the dinosaur that attracts the most visitors', function(){
@@ -88,25 +95,31 @@ describe('Park', function () {
 
 
   it('should be able to find all dinosaurs of a particular species',function(){
-    list = thePark.allFromSameSpecies("Mamenchisaurus");
+    list = thePark.allFromSameSpecies("Velociraptor");
     const actual = list;
-    assert.deepEqual(actual, [dinosaur8]);
+    assert.deepEqual(actual, [dinosaur2,dinosaur13,dinosaur14]);
 
   });
 
   it('should be able to calculate the total number of visitors per day',function(){
     const actual = thePark.visitorsPerDay();
-    assert.deepEqual(actual, 275);
+    assert.deepEqual(actual, 353);
   });
 
   it('should be able to calculate the total number of visitors per year',function(){
     const actual = thePark.visitorsPerYear();
-    assert.deepEqual(actual, 100375);
+    assert.deepEqual(actual, 128845);
   });
 
   it('should be able to calculate total revenue for one year',function(){
     const actual = thePark.yearlyIncome();
-    assert.deepEqual(actual, 12045000);
+    assert.deepEqual(actual, 15461400);
+  });
+
+  it('Remove all dinosaurs of a particular species',function(){
+    thePark.removeSpecies("Velociraptor");
+    const actual = thePark.dino_collection.length;
+    assert.equal(actual, 12);
   });
 
 });

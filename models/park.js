@@ -35,7 +35,7 @@ Park.prototype.parkStar = function () {
   return top_dino;
 }
 
-Park.prototype.allFromSameSpecies = function(a_name) {
+Park.prototype.allFromSameSpecies = function (a_name) {
   dinoList = [];
   for (dino of this.dino_collection) {
     if (dino.species === a_name) {
@@ -45,7 +45,7 @@ Park.prototype.allFromSameSpecies = function(a_name) {
   return dinoList;
 }
 
-Park.prototype.visitorsPerDay = function(){
+Park.prototype.visitorsPerDay = function () {
   total = 0;
   for (dino of this.dino_collection) {
     total += dino.guestsAttractedPerDay;
@@ -53,14 +53,24 @@ Park.prototype.visitorsPerDay = function(){
   return total;
 }
 
-Park.prototype.visitorsPerYear = function(){
+Park.prototype.visitorsPerYear = function () {
   //const value = this.visitorsPerDay();
   //return value; 
-  return this.visitorsPerDay()*365
+  return this.visitorsPerDay() * 365
 }
 
-Park.prototype.yearlyIncome = function(){
-  return this.visitorsPerYear()*this.ticketPrice;
+Park.prototype.yearlyIncome = function () {
+  return this.visitorsPerYear() * this.ticketPrice;
+}
+
+Park.prototype.removeSpecies = function(species){
+  let new_array =[];
+  for(dino of this.dino_collection) {
+  if (dino.species !== species) {
+    new_array.push(dino);
+  }
+}
+this.dino_collection = new_array;
 }
 
 
