@@ -74,7 +74,47 @@ this.dino_collection = new_array;
 }
 
 
+Park.prototype.listByDiet = function(){
+  // var carnivore_count = 0;
+  // var herbivore_count = 0;
+  // var omnivore_count = 0;
+  // var carnivore= 0;
+  // var herbivore= 0;
+  // var omnivore= 0;
 
+  var something = 
+    {
+    carnivore:0,
+    herbivore:0,
+    omnivore:0
+  };
+  // for(dino of this.dino_collection) {
+  //   if (dino.diet === "carnivore"){
+  //     something.carnivore_count +=1;
+  //   }
+  //   if (dino.diet === "herbivore"){
+  //     something.herbivore_count +=1;
+  //   }
+  //   if (dino.diet === "omnivore"){
+  //     something.omnivore_count +=1;
+  //   }  
+    
+  // }
+  for(dino of this.dino_collection) {
+    if (dino.diet === "carnivore"){
+      something.carnivore +=1;
+    }
+    if (dino.diet === "herbivore"){
+      something.herbivore+=1;
+    }
+    if (dino.diet === "omnivore"){
+      something.omnivore +=1;
+    }  
+    
+  }
+  return something;
+
+}
 
 
 

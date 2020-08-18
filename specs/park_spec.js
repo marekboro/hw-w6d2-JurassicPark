@@ -36,7 +36,6 @@ describe('Park', function () {
     dinosaur14 = new Dinosaur("Velociraptor", "carnivore", 25);
     dinosaur15 = new Dinosaur("Apatosaurus", "herbivore", 28);
     
-
     thePark = new Park("Jurassic parque", 120, parkCollection);
     
     thePark.addDinosaur(dinosaur2);
@@ -54,8 +53,6 @@ describe('Park', function () {
     thePark.addDinosaur(dinosaur13);
     thePark.addDinosaur(dinosaur14);
     thePark.addDinosaur(dinosaur15);
-    
-    
     
   })
 
@@ -122,4 +119,13 @@ describe('Park', function () {
     assert.equal(actual, 12);
   });
 
+  it('returns and object listing animal counts by diet',function(){
+    const actual = thePark.listByDiet();
+    const expected = { 'carnivore': 6, 'herbivore': 7, 'omnivore': 2 }
+    assert.deepEqual(actual, expected);
+
+  })
+
 });
+
+
