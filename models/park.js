@@ -59,6 +59,10 @@ Park.prototype.visitorsPerYear = function(){
   return this.visitorsPerDay()*365
 }
 
+Park.prototype.yearlyIncome = function(){
+  return this.visitorsPerYear()*this.ticketPrice;
+}
+
 
 
 
