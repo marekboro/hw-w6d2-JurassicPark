@@ -73,12 +73,17 @@ describe('Park', function () {
     assert.equal(actual, 13);
   });
     
-  
-  
 
-  it('should be able to remove a dinosaur from its collection');
+  it('should be able to remove a dinosaur from its collection', function(){
+    thePark.removeDinosaur(dino13);
+    const actual = thePark.dino_collection.length;
+    assert.equal(actual, 12);
+  });
 
-  it('should be able to find the dinosaur that attracts the most visitors');
+  it('should be able to find the dinosaur that attracts the most visitors', function(){
+    
+  });
+
 
   it('should be able to find all dinosaurs of a particular species');
 

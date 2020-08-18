@@ -7,18 +7,19 @@ const Park = function (name, ticketPrice, dino_collection) {
 Park.prototype.addDinosaur = function (dinosaur) {
   this.dino_collection.push(dinosaur);
 }
-// Park.prototype.removeDinosaur = function(dinosaur){
-//     new_array = []
-//     for (dino of this.collection){
-//         if (!dinosaur){
-//             new_array.push(dino);
-//         }
-//     } 
-//     this.collection = new_array;
-// }
-// Park.prototype.removeDinosaur1 = function(dinosaur){
-//     return;
-// }
+
+Park.prototype.removeDinosaur = function(dinosaur){
+    let new_array = []
+    for (dino of this.dino_collection){
+        if (dino !== dinosaur){
+            new_array.push(dino);
+        }
+    } 
+    this.dino_collection = new_array;
+}
+Park.prototype.removeDinosaur1 = function(dinosaur){
+    return;
+}
 
 
 
