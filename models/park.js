@@ -1,7 +1,7 @@
 const Park = function (name, ticketPrice, dino_collection) {
   this.name = name;
   this.ticketPrice = ticketPrice;
-  this.dino_collection = dino_collection;
+  this.dino_collection = [];
 }
 
 Park.prototype.addDinosaur = function (dinosaur) {

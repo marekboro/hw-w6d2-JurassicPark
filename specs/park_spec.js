@@ -3,7 +3,6 @@ const Park = require('../models/park.js');
 const Dinosaur = require('../models/dinosaur.js');
 
 describe('Park', function () {
-
   let dinosaur1;
   let dinosaur2;
   let dinosaur3;
@@ -17,9 +16,10 @@ describe('Park', function () {
   let dinosaur11;
   let dinosaur12;
   let thePark;
-  let park_collection = [];
+  let parkCollection =[];
 
   beforeEach(function () {
+    
     dinosaur1 = new Dinosaur("T-Rex", "carnivore", 52);
     dinosaur2 = new Dinosaur("Velociraptor", "carnivore", 16);
     dinosaur3 = new Dinosaur("Brachiosaurus", "herbivore", 21);
@@ -32,20 +32,23 @@ describe('Park', function () {
     dinosaur10 = new Dinosaur("Compsognathus", "carnivore", 14);
     dinosaur11 = new Dinosaur("Ankylosaurus", "herbivore", 13);
     dinosaur12 = new Dinosaur("Apatosaurus", "herbivore", 28);
-    park_collection.push.dinosaur1;
-    park_collection.push.dinosaur2;
-    park_collection.push.dinosaur3;
-    park_collection.push.dinosaur4;
-    park_collection.push.dinosaur5;
-    park_collection.push.dinosaur6;
-    park_collection.push.dinosaur7;
-    park_collection.push.dinosaur8;
-    park_collection.push.dinosaur9;
-    park_collection.push.dinosaur10;
-    park_collection.push.dinosaur11;
-    park_collection.push.dinosaur12;
-    thePark = new Park("Jurassic parque", 120, park_collection);
+    
 
+    thePark = new Park("Jurassic parque", 120, parkCollection);
+    thePark.addDinosaur(dinosaur1);
+    thePark.addDinosaur(dinosaur2);
+    thePark.addDinosaur(dinosaur3);
+    thePark.addDinosaur(dinosaur4);
+    thePark.addDinosaur(dinosaur5);
+    thePark.addDinosaur(dinosaur6);
+    thePark.addDinosaur(dinosaur7);
+    thePark.addDinosaur(dinosaur8);
+    thePark.addDinosaur(dinosaur9);
+    thePark.addDinosaur(dinosaur10);
+    thePark.addDinosaur(dinosaur11);
+    thePark.addDinosaur(dinosaur12);
+    
+    
   })
 
   it('should have a name', function () {
@@ -53,11 +56,25 @@ describe('Park', function () {
     assert.deepEqual(actual, "Jurassic parque");
   });
 
-  it('should have a ticket price');
+  it('should have a ticket price', function () {
+    const actual = thePark.ticketPrice;
+    assert.deepEqual(actual, 120);
+  });
 
-  it('should have a collection of dinosaurs');
+  it('should have a collection of dinosaurs', function () {
+    const actual = thePark.dino_collection.length;
+    assert.equal(actual, 12);
+  });
 
-  it('should be able to add a dinosaur to its collection');
+  it('should be able to add a dinosaur to its collection', function(){
+    dino13 = new Dinosaur("Denver","hugs",5);
+    thePark.addDinosaur(dino13);
+    const actual = thePark.dino_collection.length;
+    assert.equal(actual, 13);
+  });
+    
+  
+  
 
   it('should be able to remove a dinosaur from its collection');
 
