@@ -35,7 +35,7 @@ describe('Park', function () {
     
 
     thePark = new Park("Jurassic parque", 120, parkCollection);
-    thePark.addDinosaur(dinosaur1);
+    
     thePark.addDinosaur(dinosaur2);
     thePark.addDinosaur(dinosaur3);
     thePark.addDinosaur(dinosaur4);
@@ -43,6 +43,7 @@ describe('Park', function () {
     thePark.addDinosaur(dinosaur6);
     thePark.addDinosaur(dinosaur7);
     thePark.addDinosaur(dinosaur8);
+    thePark.addDinosaur(dinosaur1);
     thePark.addDinosaur(dinosaur9);
     thePark.addDinosaur(dinosaur10);
     thePark.addDinosaur(dinosaur11);
@@ -81,7 +82,8 @@ describe('Park', function () {
   });
 
   it('should be able to find the dinosaur that attracts the most visitors', function(){
-    
+    const actual = thePark.parkStar();
+    assert.equal(actual, dinosaur1 );
   });
 
 
