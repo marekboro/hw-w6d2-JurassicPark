@@ -94,7 +94,10 @@ describe('Park', function () {
 
   });
 
-  it('should be able to calculate the total number of visitors per day');
+  it('should be able to calculate the total number of visitors per day',function(){
+    const actual = thePark.visitorsPerDay();
+    assert.deepEqual(actual, 30);
+  });
 
   it('should be able to calculate the total number of visitors per year');
 

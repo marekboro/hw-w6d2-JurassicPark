@@ -37,14 +37,6 @@ Park.prototype.parkStar = function () {
 
 Park.prototype.allFromSameSpecies = function(a_name) {
   dinoList = [];
-
-  // for (i =0; i<this.dino_collection.length; i++){
-  //   if(this.dino_collection[i].species)
-  // }
-
-
-
-
   for (dino of this.dino_collection) {
     if (dino.species === a_name) {
       dinoList.push(dino);
@@ -52,6 +44,19 @@ Park.prototype.allFromSameSpecies = function(a_name) {
   }
   return dinoList;
 }
+
+Park.prototype.visitorsPerDay = function(){
+  total = 0;
+  for (dino of this.dino_collection) {
+    total += dino.guestsAttractedPerDay;
+  }
+  return total;
+}
+
+
+
+
+
 
 
 
