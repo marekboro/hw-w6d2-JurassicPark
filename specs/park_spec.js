@@ -82,12 +82,15 @@ describe('Park', function () {
   });
 
   it('should be able to find the dinosaur that attracts the most visitors', function(){
-    const actual = thePark.parkStar();
-    assert.equal(actual, dinosaur1 );
+    const actual = thePark.parkStar("Mamenchisaurus");
+    assert.equal(actual,[dinosaur8] );
   });
 
 
-  it('should be able to find all dinosaurs of a particular species');
+  it('should be able to find all dinosaurs of a particular species',function(){
+    const actual = thePark.allFromOneSpecies()
+
+  });
 
   it('should be able to calculate the total number of visitors per day');
 

@@ -33,12 +33,17 @@ Park.prototype.parkStar = function () {
 
   }
   return top_dino;
-
-
-
 }
 
-
+Park.prototype.allFromSameSpecies = function(species_name){
+  allFromOneSpecies = []
+  for (dino of this.dino_collection){
+    if (dino.species_name === species_name){
+      allFromOneSpecies.push(dino)
+    }
+  }
+  return allFromOneSpecies;
+}
 
 
 
